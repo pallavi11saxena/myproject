@@ -12,6 +12,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import javax.jcr.*;
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,7 +21,8 @@ import java.util.List;
  * Servlet to get nodes list
  * http://localhost:8080/nodes/
  */
-public class GetNodesService {
+@Path("/api")
+public class GetNodesService extends org.hippoecm.hst.jaxrs.services.AbstractResource{
 
     private static Logger LOG = LoggerFactory.getLogger(GetNodesServlet.class);
 
@@ -27,6 +30,8 @@ public class GetNodesService {
      * @return SearchResponse
      * @throws RepositoryException
      */
+    @GET
+    @Path("/nodelist")
     public SearchResponse getNodes() throws RepositoryException {
         {
             LOG.debug("Entering getNodes");

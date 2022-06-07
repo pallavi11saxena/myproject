@@ -1,0 +1,5 @@
+definitions:
+  config:
+    /hst:hst/hst:configurations/hst:default/hst:sitemap/nodes:
+      jcr:primaryType: hst:sitemapitem
+      hst:containerresource: true

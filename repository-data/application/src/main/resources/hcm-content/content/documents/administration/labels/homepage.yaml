@@ -1,0 +1,25 @@
+/content/documents/administration/labels/homepage:
+  jcr:primaryType: hippo:handle
+  jcr:mixinTypes: ['hippo:named', 'mix:referenceable']
+  jcr:uuid: 68ce7b36-2938-45c1-b941-ffd9a0975c99
+  hippo:name: Homepage
+  /homepage:
+    jcr:primaryType: resourcebundle:resourcebundle
+    jcr:mixinTypes: ['mix:referenceable']
+    jcr:uuid: 78de1158-e291-4f61-92fa-ca7251f68e53
+    hippo:availability: [live, preview]
+    hippostd:state: published
+    hippostdpubwf:createdBy: admin
+    hippostdpubwf:creationDate: 2014-08-21T17:08:08.703+02:00
+    hippostdpubwf:lastModificationDate: 2014-08-21T17:11:53.242+02:00
+    hippostdpubwf:lastModifiedBy: admin
+    hippostdpubwf:publicationDate: 2014-08-21T17:11:55.239+02:00
+    resourcebundle:descriptions: [Title displayed on homepage., Text displayed on
+        homepage.]
+    resourcebundle:id: essentials.homepage
+    resourcebundle:keys: [homepage.title, homepage.text]
+    resourcebundle:messages: [Home Page, 'Every website comes with its own styling
+        requirements. The Bloomreach setup application can therefore not address site
+        styling. Instead, the generated pages use minimal styling to render the content.
+        It is the task of the project developer to adjust the front-end to the site''s
+        needs.']

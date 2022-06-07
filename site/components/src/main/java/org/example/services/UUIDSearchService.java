@@ -22,7 +22,7 @@ import java.util.List;
  */
 public class UUIDSearchService {
 
-    private static Logger LOG = LoggerFactory.getLogger(GetNodesServlet.class);
+    private static Logger LOG = LoggerFactory.getLogger(UUIDSearchService.class);
 
     /**
      * @return SearchResponse

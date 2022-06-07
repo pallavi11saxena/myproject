@@ -14,7 +14,7 @@
       <list>
         <bean class="org.apache.cxf.jaxrs.lifecycle.SingletonResourceProvider">
           <constructor-arg>
-            <bean class="org.example.services.GetNodesService"/>
+            <bean class="org.example.restservices.RestService"/>
           </constructor-arg>
         </bean>
       </list>

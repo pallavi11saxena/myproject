@@ -24,7 +24,7 @@ import java.util.List;
  */
 public class XPathSearchService {
 
-    private static Logger LOG = LoggerFactory.getLogger(GetNodesServlet.class);
+    private static Logger LOG = LoggerFactory.getLogger(XPathSearchService.class);
 
     /**
      * @return SearchResponse

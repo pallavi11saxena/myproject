@@ -1,8 +1,8 @@
+
+package org.example.restservices;
 /*
  * Author @Pallavi Saxena
  */
-
-package org.example.restservices;
 
 import org.example.beans.SearchResponse;
 import org.example.services.GetNodesService;
@@ -21,6 +21,10 @@ import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.UriInfo;
 
+/*
+ * Service for rest apis
+ * http://localhost:8080/nodes/
+ */
 @Produces({MediaType.APPLICATION_JSON})
 @Path("/api/")
 public class RestService extends org.hippoecm.hst.jaxrs.services.AbstractResource {

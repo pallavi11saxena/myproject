@@ -6,7 +6,6 @@ package org.example.services;
 
 import org.example.beans.SearchResponse;
 import org.example.beans.SearchResult;
-import org.example.servlet.GetNodesServlet;
 import org.hippoecm.hst.site.HstServices;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -16,11 +15,10 @@ import javax.jcr.query.Query;
 import javax.jcr.query.QueryManager;
 import javax.jcr.query.QueryResult;
 import java.util.ArrayList;
-import java.util.List;
 
 /*
- * Servlet to get nodes list
- * http://localhost:8080/nodes/
+ * Service to get nodes using search string
+ * http://localhost:8080/nodes?search=
  */
 public class XPathSearchService {
 

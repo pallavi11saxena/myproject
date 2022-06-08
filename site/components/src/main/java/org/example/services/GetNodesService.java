@@ -6,21 +6,16 @@ package org.example.services;
 
 import org.example.beans.SearchResponse;
 import org.example.beans.SearchResult;
-import org.example.servlet.GetNodesServlet;
 import org.hippoecm.hst.site.HstServices;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import javax.jcr.*;
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
-import javax.ws.rs.core.MediaType;
 import java.util.ArrayList;
 import java.util.List;
 
 /*
- * Servlet to get nodes list
+ * Service to get nodes list
  * http://localhost:8080/nodes/
  */
 public class GetNodesService {

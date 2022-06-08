@@ -6,7 +6,6 @@ package org.example.services;
 
 import org.example.beans.SearchResponse;
 import org.example.beans.SearchResult;
-import org.example.servlet.GetNodesServlet;
 import org.hippoecm.hst.site.HstServices;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -14,11 +13,10 @@ import org.slf4j.LoggerFactory;
 import javax.jcr.*;
 import javax.jcr.query.QueryManager;
 import java.util.ArrayList;
-import java.util.List;
 
 /*
- * Servlet to get nodes list
- * http://localhost:8080/nodes/
+ * Service to get nodes using uuid
+ * http://localhost:8080/nodes?uuid=
  */
 public class UUIDSearchService {
 
@@ -59,7 +57,7 @@ public class UUIDSearchService {
                 searchResponse.getSearchResults().add(searchResult);
 
             } catch (RepositoryException e) {
-                LOG.info(e.getMessage());
+                LOG.debug(e.getMessage());
                 throw e;
             } finally {
                 session.logout();

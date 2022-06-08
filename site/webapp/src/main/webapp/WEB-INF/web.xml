@@ -186,21 +186,6 @@
     <servlet-class>org.example.servlet.AssessmentServlet</servlet-class>
   </servlet>
 
-  <servlet>
-    <servlet-name>GetNodesServlet</servlet-name>
-    <servlet-class>org.example.servlet.GetNodesServlet</servlet-class>
-  </servlet>
-
-  <servlet>
-    <servlet-name>XPathSearchServlet</servlet-name>
-    <servlet-class>org.example.servlet.XPathSearchServlet</servlet-class>
-  </servlet>
-
-  <servlet>
-    <servlet-name>UUIDSearchServlet</servlet-name>
-    <servlet-class>org.example.servlet.UUIDSearchServlet</servlet-class>
-  </servlet>
-
   <servlet-mapping>
     <servlet-name>BinariesServlet</servlet-name>
     <url-pattern>/binaries/*</url-pattern>
@@ -234,21 +219,6 @@
   <servlet-mapping>
     <servlet-name>AssessmentServlet</servlet-name>
     <url-pattern>/nodes/*</url-pattern>
-  </servlet-mapping>
-
-  <servlet-mapping>
-    <servlet-name>GetNodesServlet</servlet-name>
-    <url-pattern>/getnodes/*</url-pattern>
-  </servlet-mapping>
-
-  <servlet-mapping>
-    <servlet-name>XPathSearchServlet</servlet-name>
-    <url-pattern>/search/*</url-pattern>
-  </servlet-mapping>
-
-  <servlet-mapping>
-    <servlet-name>UUIDSearchServlet</servlet-name>
-    <url-pattern>/uuid/*</url-pattern>
   </servlet-mapping>
 
   <security-constraint>

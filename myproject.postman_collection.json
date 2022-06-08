@@ -1,0 +1,166 @@
+{
+	"info": {
+		"_postman_id": "481ae0b5-d077-405f-aac2-04eb49551676",
+		"name": "myproject",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "getNodes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/site/nodes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"site",
+						"nodes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "searchXPath",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/site/nodes/?search=%2F%2F%2A%5Bjcr%3Acontains%28.%2C%272022%27%29%5D",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"site",
+						"nodes",
+						""
+					],
+					"query": [
+						{
+							"key": "search",
+							"value": "%2F%2F%2A%5Bjcr%3Acontains%28.%2C%272022%27%29%5D"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "searchUUID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/site/nodes?uuid=dc8601a5-2946-49b2-b1b5-b2c2fe253e02",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"site",
+						"nodes"
+					],
+					"query": [
+						{
+							"key": "uuid",
+							"value": "dc8601a5-2946-49b2-b1b5-b2c2fe253e02"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getNodes-api",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/site/restservices/api/node",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"site",
+						"restservices",
+						"api",
+						"node"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "searchXPath-api",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/site/restservices/api/node?search=%2F%2F%2A%5Bjcr%3Acontains%28.%2C%272022%27%29%5D",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"site",
+						"restservices",
+						"api",
+						"node"
+					],
+					"query": [
+						{
+							"key": "search",
+							"value": "%2F%2F%2A%5Bjcr%3Acontains%28.%2C%272022%27%29%5D"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "searchUUID-api",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/site/restservices/api/node?uuid=dc8601a5-2946-49b2-b1b5-b2c2fe253e02",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"site",
+						"restservices",
+						"api",
+						"node"
+					],
+					"query": [
+						{
+							"key": "uuid",
+							"value": "dc8601a5-2946-49b2-b1b5-b2c2fe253e02"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

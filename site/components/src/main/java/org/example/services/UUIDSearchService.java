@@ -51,13 +51,13 @@ public class UUIDSearchService {
                 while (propertyList.hasNext()) {
                     Property currentProp = propertyList.nextProperty();
                     searchResult.getProperties().add(currentProp.getName());
-                    LOG.info("Property:" + currentProp.getName());
+                    LOG.debug("Property:" + currentProp.getName());
                 }
 
                 searchResponse.getSearchResults().add(searchResult);
 
             } catch (RepositoryException e) {
-                LOG.debug(e.getMessage());
+                LOG.error(e.getMessage());
                 throw e;
             } finally {
                 session.logout();

@@ -43,20 +43,11 @@ public class GetNodesService {
                 // recursively iterate nodes to list all nodes under content/documents node
                 NodeIterator childrenOfRoot = rootNode.getNodes();
                 while (childrenOfRoot.hasNext()) {
-                    Node currentChildOfRoot = childrenOfRoot.nextNode();
-                    if (currentChildOfRoot.getName().equals("content")) {
-                        NodeIterator childrenOfContent = currentChildOfRoot.getNodes();
-                        while (childrenOfContent.hasNext()) {
-                            Node currentChildOfContent = childrenOfContent.nextNode();
-                            if (currentChildOfContent.getName().equals("documents")) {
-                                iterateNodes(currentChildOfContent, searchResponse.getSearchResults());
-                            }
-                        }
-                    }
+                    iterateNodes(childrenOfRoot.nextNode(), searchResponse.getSearchResults());
                 }
 
             } catch (RepositoryException e) {
-                LOG.info(e.getMessage());
+                LOG.error(e.getMessage());
                 throw e;
             } finally {
                 session.logout();
@@ -71,10 +62,9 @@ public class GetNodesService {
      *
      * @param node, current node
      * @param res,  SearchResponse.SearchResults
-     * @return SearchResponse.SearchResults
      * @throws RepositoryException
      */
-    private List<SearchResult> iterateNodes(Node node, List<SearchResult> res) throws RepositoryException {
+    private void iterateNodes(Node node, List<SearchResult> res) throws RepositoryException {
         LOG.debug("Entering iterateNodes");
 
         NodeIterator nodeList = node.getNodes();
@@ -82,16 +72,17 @@ public class GetNodesService {
         while (nodeList.hasNext()) {
             Node currentnode = nodeList.nextNode();
 
-            SearchResult searchResult = new SearchResult();
-            searchResult.setNodeName(currentnode.getName());
-            searchResult.setNodePath(currentnode.getPath());
-            res.add(searchResult);
+            if (currentnode.getPath().contains("content/documents")) {
+                SearchResult searchResult = new SearchResult();
+                searchResult.setNodeName(currentnode.getName());
+                searchResult.setNodePath(currentnode.getPath());
+                res.add(searchResult);
 
-            if (currentnode.getNodes() != null && !currentnode.isNodeType("hippofacnav:facetnavigation")) {
-                iterateNodes(currentnode, res);
+                if (currentnode.getNodes() != null && !currentnode.isNodeType("hippofacnav:facetnavigation")) {
+                    iterateNodes(currentnode, res);
+                }
             }
         }
         LOG.debug("Exiting iterateNodes");
-        return res;
     }
 }

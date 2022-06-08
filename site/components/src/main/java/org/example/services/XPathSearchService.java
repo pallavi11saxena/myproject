@@ -51,22 +51,23 @@ public class XPathSearchService {
                     Node currentNode = nodeList.nextNode();
                     SearchResult searchResult = new SearchResult();
                     searchResult.setProperties(new ArrayList<String>());
+
                     searchResult.setNodeName(currentNode.getName());
                     searchResult.setNodePath(currentNode.getPath());
-                    LOG.info("Node: " + currentNode.getName());
+                    LOG.debug("Node: " + currentNode.getName());
 
                     PropertyIterator propertyList = currentNode.getProperties();
 
                     while (propertyList.hasNext()) {
                         Property currentProp = propertyList.nextProperty();
                         searchResult.getProperties().add(currentProp.getName());
-                        LOG.info("Property:" + currentProp.getName());
+                        LOG.debug("Property:" + currentProp.getName());
                     }
                     searchResponse.getSearchResults().add(searchResult);
                 }
 
             } catch (RepositoryException e) {
-                LOG.info(e.getMessage());
+                LOG.error(e.getMessage());
                 throw e;
             } finally {
                 session.logout();
